@@ -2,6 +2,12 @@ from flask import request, jsonify
 from app import app  # Import the app object
 from models import db, User, DisasterReport, RescueVehicle
 
+
+@app.route('/')
+def home():
+    return "Welcome to the Disaster Response Backend!"
+
+
 # Register a new user (only role is required)
 @app.route('/register', methods=['POST'])
 def register():
